@@ -14,7 +14,7 @@ public class kkAttackPlayer : MonoBehaviour
     {
         position = gameObject.transform.position;
         target = new Vector2(0.0f, 0.0f);
-
+       
     }
 
     // Update is called once per frame
