@@ -9,6 +9,7 @@ public class EnemyMove : MonoBehaviour
     public bool attached = false;
     public bool isPositive = true;
     public AudioClip enemyAttachSFX;
+    public AudioClip enemyExplodeSFX;
     public Sprite BlueBall;
     public Sprite RedBall;
     public SpriteRenderer enemySprite;
@@ -16,7 +17,7 @@ public class EnemyMove : MonoBehaviour
     Vector3 enemyDirection;
     public GameObject childBlue;
     public GameObject childRed;
-    //public ParticleSystem particle;
+    //public GameObject particle;
 
     void Start()
     {
@@ -30,26 +31,27 @@ public class EnemyMove : MonoBehaviour
         //particle = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
-    void Update2() {
-        if (!attached) {
-            if ((playerObject.GetComponent<PlayerMove>().isPositive && isPositive)
-            || (!playerObject.GetComponent<PlayerMove>().isPositive && !isPositive)) { return; }
-            else if ((playerObject.GetComponent<PlayerMove>().isPositive && !isPositive)) {
-                enemySprite.sprite = RedBall;
-                enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
-                transform.position += enemyDirection * speed;
-            }
-            else {
-                enemySprite.sprite = BlueBall;
-                enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
-                transform.position += enemyDirection * speed / 2;
-            }
-        }
-    }
+    //void Update2() {
+    //    if (!attached) {
+    //        if ((playerObject.GetComponent<PlayerMove>().isPositive && isPositive)
+    //        || (!playerObject.GetComponent<PlayerMove>().isPositive && !isPositive)) { return; }
+    //        else if ((playerObject.GetComponent<PlayerMove>().isPositive && !isPositive)) {
+    //            enemySprite.sprite = RedBall;
+    //            enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
+    //            transform.position += enemyDirection * speed;
+    //        }
+    //        else {
+    //            enemySprite.sprite = BlueBall;
+    //            enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
+    //            transform.position += enemyDirection * speed / 2;
+    //        }
+    //    }
+    //}
 
     void Update() {
         if (!attached) {
             if (playerObject.GetComponent<PlayerMove>().isPositive) {
+                isPositive = true;
                 childBlue.active = false;
                 childRed.active = true;
                 //enemySprite.sprite = RedBall;
@@ -57,6 +59,7 @@ public class EnemyMove : MonoBehaviour
                 transform.position += enemyDirection * speed;
             }
             else {
+                isPositive = false;
                 childRed.active = false;
                 childBlue.active = true;
                 //enemySprite.sprite = BlueBall;
@@ -80,6 +83,11 @@ public class EnemyMove : MonoBehaviour
         var em = c.GetComponent<EnemyMove>();
         if (pm == null && (em == null || !em.attached)) { return; }
 		Transform t = c.gameObject.transform;
+        if (isPositive) {
+            AudioSource.PlayClipAtPoint(enemyExplodeSFX, Camera.main.transform.position);
+            playerObject.GetComponent<PlayerManager>().loseHealth(5f);
+            Destroy(gameObject);
+        }
 		PickUp(t);
 	}
 }

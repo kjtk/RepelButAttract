@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour {
     public Vector2 clampPos;
     public bool isPositive = true;
     GameObject[] allEnemies;
+    public AudioClip collectorSFX;
     
 
 	void Update() {
@@ -35,6 +36,8 @@ public class PlayerMove : MonoBehaviour {
         var newPos = cam.position + (Vector3)localpos;
         newPos.z = 0;
         transform.position = newPos;
+        if (isPositive) { gameObject.GetComponent<PlayerManager>().gainHealth(0.05f); }
+        else { gameObject.GetComponent<PlayerManager>().loseHealth(0.05f); }
 	}
 
     void Start() {
@@ -57,7 +60,10 @@ public class PlayerMove : MonoBehaviour {
         if (c.gameObject.layer == LayerMask.NameToLayer("Collector")) {
             allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in allEnemies) {
-                if (enemy.GetComponent<EnemyMove>().attached) { Destroy(enemy); }
+                if (enemy.GetComponent<EnemyMove>().attached) {
+                    AudioSource.PlayClipAtPoint(collectorSFX, Camera.main.transform.position, 1f);
+                    gameObject.GetComponent<PlayerManager>().gainScore(1000);
+                    Destroy(enemy); }
             }
         }
     }

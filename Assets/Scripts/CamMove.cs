@@ -14,6 +14,7 @@ public class CamMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed += 0.001f;
         transform.position += Vector3.right * speed * Time.deltaTime; 
     }
 }

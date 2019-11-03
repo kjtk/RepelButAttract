@@ -21,9 +21,9 @@ public class GenerateColumn : MonoBehaviour
     void Update() {
         currentCameraPositionX = cam.transform.position.x + cameraRightEdge;
         if(currentCameraPositionX >= (previousColumnPositionX + columnWidth) ) {
-            
-            Instantiate(columnPrefab, cam.transform.position + new Vector3(cameraRightEdge, 0f,0f), Quaternion.identity, columnContainer);
             previousColumnPositionX = currentCameraPositionX;
+            Instantiate(columnPrefab, cam.transform.position + new Vector3(cameraRightEdge, 0f,0f), Quaternion.identity, columnContainer);
+            //previousColumnPositionX = currentCameraPositionX;
         }
     }
 }

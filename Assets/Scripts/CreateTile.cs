@@ -50,7 +50,6 @@ public class CreateTile : MonoBehaviour{
         else if (Random.value > 0.95f) {
                 Instantiate(collectorPrefab, transform.position, Quaternion.identity, collectorContainer);
                 //print("ENEMY SPAWNER LUOTU");
-        }
-         
+        }        
     }
 }
