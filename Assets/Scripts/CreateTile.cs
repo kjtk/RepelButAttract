@@ -41,7 +41,7 @@ public class CreateTile : MonoBehaviour{
         BoxCollider2D bc = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
         bc.transform.localScale = new Vector2(0.80f, 0.80f);
 
-        if (Random.value > 0.0f) {
+        if (Random.value > 0.8f) {
             Instantiate(enemySpawnerPrefab, transform.position, Quaternion.identity, enemySpawnerContainer);
             //print("ENEMY SPAWNER LUOTU");
         }

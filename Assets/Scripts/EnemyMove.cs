@@ -14,6 +14,8 @@ public class EnemyMove : MonoBehaviour
     public SpriteRenderer enemySprite;
     Vector3 playerPosition;
     Vector3 enemyDirection;
+    public GameObject childBlue;
+    public GameObject childRed;
     //public ParticleSystem particle;
 
     void Start()
@@ -23,35 +25,48 @@ public class EnemyMove : MonoBehaviour
         enemySprite = gameObject.GetComponent<SpriteRenderer>();
         playerPosition = playerObject.transform.position;
         enemyDirection = playerPosition - transform.position;
+        childBlue = this.gameObject.transform.GetChild(1).gameObject;
+        childRed = this.gameObject.transform.GetChild(0).gameObject;
         //particle = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
-    void Update()
-    {
+    void Update2() {
         if (!attached) {
-            if (playerObject.GetComponent<PlayerMove>().isPositive == true) {
+            if ((playerObject.GetComponent<PlayerMove>().isPositive && isPositive)
+            || (!playerObject.GetComponent<PlayerMove>().isPositive && !isPositive)) { return; }
+            else if ((playerObject.GetComponent<PlayerMove>().isPositive && !isPositive)) {
                 enemySprite.sprite = RedBall;
                 enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
                 transform.position += enemyDirection * speed;
-                //Instantiate(particle, transform.position, Quaternion.identity, gameObject.transform);
-                //transform.position += enemyDirection * speed * Time.deltaTime;
-                //var playerPosition = playerObject.transform.position;
-                //transform.position = Vector3.MoveTowards(transform.position, playerPosition, speed);
             }
             else {
                 enemySprite.sprite = BlueBall;
                 enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
-                transform.position += enemyDirection * speed/2;
-                //Instantiate(particle, transform.position, Quaternion.identity, gameObject.transform);
-                //transform.position += playerPosition * speed * Time.deltaTime;
-                //transform.position = Vector3.MoveTowards(transform.position, playerPosition, speed/3);
-                //var playerPosition = playerObject.transform.position;
+                transform.position += enemyDirection * speed / 2;
             }
-            //transform.position += enemyDirection * speed;// * Time.deltaTime;
         }
-	}
+    }
 
-	public void PickUp(Transform newParent) {
+    void Update() {
+        if (!attached) {
+            if (playerObject.GetComponent<PlayerMove>().isPositive) {
+                childBlue.active = false;
+                childRed.active = true;
+                //enemySprite.sprite = RedBall;
+                //enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
+                transform.position += enemyDirection * speed;
+            }
+            else {
+                childRed.active = false;
+                childBlue.active = true;
+                //enemySprite.sprite = BlueBall;
+                //enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
+                transform.position += enemyDirection * speed / 2;
+            }
+        }
+    }
+
+    public void PickUp(Transform newParent) {
         AudioSource.PlayClipAtPoint(enemyAttachSFX, Camera.main.transform.position);
         transform.SetParent(newParent);
         attached = true;
