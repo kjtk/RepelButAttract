@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour {
     public Transform cam;
     public Vector2 clampPos;
     public bool isPositive = true;
+    
 
 	void Update() {
         //var newPosition = transform.position;
@@ -42,14 +43,14 @@ public class PlayerMove : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("Tile")) {
-            Debug.Log("Touched a tile");
+            //Debug.Log("Touched a tile");
             if (c.gameObject.GetComponent<CreateTile>().TileType == "-") {
                 isPositive = false;
-                print("negative");
+                //print("negative");
             }
             else {
                 isPositive = true;
-                print("positive");
+                //print("positive");
             }
         } 
     }

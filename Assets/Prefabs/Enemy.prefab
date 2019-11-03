@@ -32,7 +32,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4427300043887205208}
-  - {fileID: 7575243959440016036}
   - {fileID: 1434905985493971753}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -52,10 +51,13 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   speed: 0.0025
   attached: 0
+  isPositive: 1
   enemyAttachSFX: {fileID: 8300000, guid: aa5d94ee954674841a99a1494e6c8b1c, type: 3}
   BlueBall: {fileID: 21300000, guid: 8eb6cf98229f12c45ad424924e74d20e, type: 3}
   RedBall: {fileID: 21300000, guid: bb8bbc50f83dfd24d9feb73f54da1089, type: 3}
   enemySprite: {fileID: 0}
+  particle: {fileID: 9085452253955647414, guid: dbe32796a2080c54fa377db2447e7cec,
+    type: 3}
 --- !u!58 &1026847995276140950
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -251,7 +253,7 @@ Transform:
   m_LocalScale: {x: 0.22301, y: 0.22301, z: 0.22301}
   m_Children: []
   m_Father: {fileID: 4427300042712040159}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6832941081134615531
 SpriteRenderer:
@@ -302,83 +304,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1050732770522512398
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4427300042712040159}
-    m_Modifications:
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12.282544
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1294863805311730358, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_Name
-      value: HAZARD Particle
-      objectReference: {fileID: 0}
-    - target: {fileID: 1294863805311730358, guid: dbe32796a2080c54fa377db2447e7cec,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dbe32796a2080c54fa377db2447e7cec, type: 3}
---- !u!4 &7575243959440016036 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7472703087417999018, guid: dbe32796a2080c54fa377db2447e7cec,
-    type: 3}
-  m_PrefabInstance: {fileID: 1050732770522512398}
-  m_PrefabAsset: {fileID: 0}
