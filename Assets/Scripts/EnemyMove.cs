@@ -32,7 +32,7 @@ public class EnemyMove : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D c) {
         if (attached) { return; }
-        print("JOO");
+        //print("JOO");
         var pm = c.GetComponent<PlayerMove>();
         var em = c.GetComponent<EnemyMove>();
         if (pm == null && (em == null || !em.attached)) { return; }
