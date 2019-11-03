@@ -86,6 +86,10 @@ public class EnemyMove : MonoBehaviour
         if (isPositive) {
             AudioSource.PlayClipAtPoint(enemyExplodeSFX, Camera.main.transform.position);
             playerObject.GetComponent<PlayerManager>().loseHealth(5f);
+            GetComponent<ParticleSystem>().Play();
+            //ParticleSystem.EmissionModule emis = GetComponent<ParticleSystem>().emission;
+            //emis.enabled = true;
+            //gameObject.GetComponent<ParticleSystem>().emission;
             Destroy(gameObject);
         }
 		PickUp(t);
