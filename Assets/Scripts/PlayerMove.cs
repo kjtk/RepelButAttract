@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour {
     public Transform cam;
     public Vector2 clampPos;
     public bool isPositive = true;
+    GameObject[] allEnemies;
     
 
 	void Update() {
@@ -52,6 +53,12 @@ public class PlayerMove : MonoBehaviour {
                 isPositive = true;
                 //print("positive");
             }
-        } 
+        }
+        if (c.gameObject.layer == LayerMask.NameToLayer("Collector")) {
+            allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in allEnemies) {
+                if (enemy.GetComponent<EnemyMove>().attached) { Destroy(enemy); }
+            }
+        }
     }
 }

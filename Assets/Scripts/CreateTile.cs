@@ -8,8 +8,10 @@ public class CreateTile : MonoBehaviour{
     public Sprite PlusTile;
     //public Transform cam;
 
+    public GameObject collectorPrefab;
     public GameObject enemySpawnerPrefab;
     public Transform enemySpawnerContainer;
+    public Transform collectorContainer;
 
     void Start() {
 
@@ -27,7 +29,7 @@ public class CreateTile : MonoBehaviour{
         }
         transform.position = new Vector2(transform.position.x, newposFix);
         
-        print("top: "+ edgeDistance + " newposFix: " + newposFix);
+        //print("top: "+ edgeDistance + " newposFix: " + newposFix);
         if (Random.value>0.5f){
             TileType = "+";
             gameObject.GetComponent<SpriteRenderer>().sprite = PlusTile;
@@ -43,6 +45,10 @@ public class CreateTile : MonoBehaviour{
 
         if (Random.value > 0.8f) {
             Instantiate(enemySpawnerPrefab, transform.position, Quaternion.identity, enemySpawnerContainer);
+            //print("ENEMY SPAWNER LUOTU");
+        }
+        if (Random.value > 0.95f) {
+            Instantiate(collectorPrefab, transform.position, Quaternion.identity, collectorContainer);
             //print("ENEMY SPAWNER LUOTU");
         }
     }

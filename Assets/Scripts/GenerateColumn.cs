@@ -9,7 +9,7 @@ public class GenerateColumn : MonoBehaviour
     public Transform columnContainer;
 
     float columnWidth = 6.375f;
-    float cameraRightEdge = 18f;
+    float cameraRightEdge = 25f;
     float currentCameraPositionX = 0f;
     float previousColumnPositionX = 0f;
 
