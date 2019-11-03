@@ -51,6 +51,7 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   speed: 0.05
   attached: 0
+  enemyAttachSFX: {fileID: 8300000, guid: aa5d94ee954674841a99a1494e6c8b1c, type: 3}
 --- !u!58 &1026847995276140950
 CircleCollider2D:
   m_ObjectHideFlags: 0

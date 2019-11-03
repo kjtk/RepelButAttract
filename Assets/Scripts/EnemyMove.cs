@@ -7,6 +7,8 @@ public class EnemyMove : MonoBehaviour
 	public GameObject playerObject;
 	public float speed = 1f;
     public bool attached = false;
+
+    public AudioClip enemyAttachSFX;
     
     void Start()
     {
@@ -22,7 +24,8 @@ public class EnemyMove : MonoBehaviour
 	}
 
 	public void PickUp(Transform newParent) {
-		transform.SetParent(newParent);
+        AudioSource.PlayClipAtPoint(enemyAttachSFX, Camera.main.transform.position);
+        transform.SetParent(newParent);
         attached = true;
         gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
 	}
