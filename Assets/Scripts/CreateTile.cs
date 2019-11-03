@@ -9,14 +9,18 @@ public class CreateTile : MonoBehaviour
     public string TileType = "-";
     public Sprite MinusTile;
     public Sprite PlusTile;
-    public Transform cam;
+    //public Transform cam;
 
     public GameObject enemySpawnerPrefab;
     public Transform enemySpawnerContainer;
 
     void Start() {
 
-        var c = cam.GetComponent<Camera>();
+        Camera c = GameObject.Find("Main Camera").GetComponent<Camera>();
+
+        //Kamera katoaa prefabista...
+        //c = cam.GetComponent<Camera>();
+
         float edgeDistance = c.orthographicSize;
         var newposFix = 0f;
         //var newposFix = -1f;
