@@ -16,7 +16,7 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.value < 0.01f) {
+        if (Random.value < 0.005f) {
             Instantiate(enemyPrefab, transform.position, Quaternion.identity, enemyContainer);
         }
     }
