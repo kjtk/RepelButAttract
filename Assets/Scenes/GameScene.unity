@@ -289,7 +289,6 @@ MonoBehaviour:
   TileType: '-'
   MinusTile: {fileID: 21300000, guid: cb99698783d518041a60a816898e5c25, type: 3}
   PlusTile: {fileID: 21300000, guid: 969344a8722f3a3469f740b0774cee68, type: 3}
-  cam: {fileID: 295038542}
   enemySpawnerPrefab: {fileID: 774827326688851673, guid: 43e5995f4c3a7b042a7e7de956a8eddd,
     type: 3}
   enemySpawnerContainer: {fileID: 166790199}
@@ -385,6 +384,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde7c6cf112e401489bcc7cc30d57b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 295038541}
+  columnPrefab: {fileID: 7706034206467400609, guid: aea3aabc398b8564da615bf0af6a6899,
+    type: 3}
+  columnContainer: {fileID: 907364585}
 --- !u!1 &295038539
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +661,6 @@ MonoBehaviour:
   TileType: '-'
   MinusTile: {fileID: 21300000, guid: cb99698783d518041a60a816898e5c25, type: 3}
   PlusTile: {fileID: 21300000, guid: 969344a8722f3a3469f740b0774cee68, type: 3}
-  cam: {fileID: 295038542}
   enemySpawnerPrefab: {fileID: 774827326688851673, guid: 43e5995f4c3a7b042a7e7de956a8eddd,
     type: 3}
   enemySpawnerContainer: {fileID: 166790199}
@@ -992,7 +994,6 @@ MonoBehaviour:
   TileType: '-'
   MinusTile: {fileID: 21300000, guid: cb99698783d518041a60a816898e5c25, type: 3}
   PlusTile: {fileID: 21300000, guid: 969344a8722f3a3469f740b0774cee68, type: 3}
-  cam: {fileID: 295038542}
   enemySpawnerPrefab: {fileID: 774827326688851673, guid: 43e5995f4c3a7b042a7e7de956a8eddd,
     type: 3}
   enemySpawnerContainer: {fileID: 166790199}

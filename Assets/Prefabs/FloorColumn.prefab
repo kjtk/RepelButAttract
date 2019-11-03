@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7706034205157195039}
   - component: {fileID: 7706034205157195024}
   - component: {fileID: 7706034205157195025}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TileMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,6 @@ MonoBehaviour:
   TileType: '-'
   MinusTile: {fileID: 21300000, guid: cb99698783d518041a60a816898e5c25, type: 3}
   PlusTile: {fileID: 21300000, guid: 969344a8722f3a3469f740b0774cee68, type: 3}
-  cam: {fileID: 0}
   enemySpawnerPrefab: {fileID: 774827326688851673, guid: 43e5995f4c3a7b042a7e7de956a8eddd,
     type: 3}
   enemySpawnerContainer: {fileID: 0}
@@ -111,7 +110,7 @@ GameObject:
   - component: {fileID: 7706034206370556679}
   - component: {fileID: 7706034206370556696}
   - component: {fileID: 7706034206370556697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TileBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +195,6 @@ MonoBehaviour:
   TileType: '-'
   MinusTile: {fileID: 21300000, guid: cb99698783d518041a60a816898e5c25, type: 3}
   PlusTile: {fileID: 21300000, guid: 969344a8722f3a3469f740b0774cee68, type: 3}
-  cam: {fileID: 0}
   enemySpawnerPrefab: {fileID: 774827326688851673, guid: 43e5995f4c3a7b042a7e7de956a8eddd,
     type: 3}
   enemySpawnerContainer: {fileID: 0}
@@ -209,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7706034206467400610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FloorColumn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +242,7 @@ GameObject:
   - component: {fileID: 7706034206829228891}
   - component: {fileID: 7706034206829228893}
   - component: {fileID: 7706034206829228892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TileTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +327,6 @@ MonoBehaviour:
   TileType: '-'
   MinusTile: {fileID: 21300000, guid: cb99698783d518041a60a816898e5c25, type: 3}
   PlusTile: {fileID: 21300000, guid: 969344a8722f3a3469f740b0774cee68, type: 3}
-  cam: {fileID: 0}
   enemySpawnerPrefab: {fileID: 774827326688851673, guid: 43e5995f4c3a7b042a7e7de956a8eddd,
     type: 3}
   enemySpawnerContainer: {fileID: 0}
