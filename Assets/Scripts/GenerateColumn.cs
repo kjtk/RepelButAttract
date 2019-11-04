@@ -8,10 +8,12 @@ public class GenerateColumn : MonoBehaviour
     public GameObject columnPrefab;
     public Transform columnContainer;
 
-    float columnWidth = 6.375f;
+    //float columnWidth = 6.375f;
+    float columnWidth = 6.40f;
     float cameraRightEdge = 25f;
     float currentCameraPositionX = 0f;
     float previousColumnPositionX = 0f;
+    float currentColumnPositionX = 0f;
 
     private void Start() {
         previousColumnPositionX = cam.transform.position.x + cameraRightEdge;
@@ -19,11 +21,11 @@ public class GenerateColumn : MonoBehaviour
         //columnWidth = GetComponent<Sprite>
     }
     void Update() {
-        currentCameraPositionX = cam.transform.position.x + cameraRightEdge;
-        if(currentCameraPositionX >= (previousColumnPositionX + columnWidth) ) {
-            previousColumnPositionX = currentCameraPositionX;
-            Instantiate(columnPrefab, cam.transform.position + new Vector3(cameraRightEdge, 0f,0f), Quaternion.identity, columnContainer);
-            //previousColumnPositionX = currentCameraPositionX;
+        currentCameraPositionX = cam.transform.position.x;
+        if(currentCameraPositionX >= (currentColumnPositionX) ) {
+            Instantiate(columnPrefab, new Vector3(currentColumnPositionX,0f,0f) + new Vector3(cameraRightEdge, 0f,0f), Quaternion.identity, columnContainer);
+            currentColumnPositionX += columnWidth;
+
         }
     }
 }
