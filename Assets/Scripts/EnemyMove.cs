@@ -52,16 +52,16 @@ public class EnemyMove : MonoBehaviour
         if (!attached) {
             if (playerObject.GetComponent<PlayerMove>().isPositive) {
                 isPositive = true;
-                childBlue.active = false;
-                childRed.active = true;
+                childBlue.SetActive(false);
+                childRed.SetActive(true);
                 //enemySprite.sprite = RedBall;
                 //enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
                 transform.position += enemyDirection * speed;
             }
             else {
                 isPositive = false;
-                childRed.active = false;
-                childBlue.active = true;
+                childRed.SetActive(false);
+                childBlue.SetActive(true);
                 //enemySprite.sprite = BlueBall;
                 //enemySprite.transform.localScale = new Vector2(0.25f, 0.25f);
                 transform.position += enemyDirection * speed / 2;
@@ -86,7 +86,7 @@ public class EnemyMove : MonoBehaviour
         if (isPositive) {
             AudioSource.PlayClipAtPoint(enemyExplodeSFX, Camera.main.transform.position);
             playerObject.GetComponent<PlayerManager>().loseHealth(5f);
-            GetComponent<ParticleSystem>().Play();
+            GetComponentInChildren<ParticleSystem>().Play();
             //ParticleSystem.EmissionModule emis = GetComponent<ParticleSystem>().emission;
             //emis.enabled = true;
             //gameObject.GetComponent<ParticleSystem>().emission;

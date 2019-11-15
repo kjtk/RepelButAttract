@@ -25,7 +25,6 @@ public class GenerateColumn : MonoBehaviour
         if(currentCameraPositionX >= (currentColumnPositionX) ) {
             Instantiate(columnPrefab, new Vector3(currentColumnPositionX,0f,0f) + new Vector3(cameraRightEdge, 0f,0f), Quaternion.identity, columnContainer);
             currentColumnPositionX += columnWidth;
-
         }
     }
 }
